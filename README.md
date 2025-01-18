@@ -76,6 +76,7 @@ To seed your database, use the following command:
 
 ```bash
 npx ts-node src/seeding/seed.ts
+```
 
 ## Resources
 
