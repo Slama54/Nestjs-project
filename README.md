@@ -70,6 +70,12 @@ $ mau deploy
 ```
 
 With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## Running the Seeder
+
+To seed your database, use the following command:
+
+```bash
+npx ts-node src/seeding/seed.ts
 
 ## Resources
 
