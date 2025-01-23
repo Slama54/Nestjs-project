@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Body, Controller, Get, Patch, Param,  ParseIntPipe, Post,  UsePipes, Delete } from '@nestjs/common';
+import { Body, Controller, Get, Patch, Param,  ParseIntPipe, Post,  UsePipes, Delete, Query } from '@nestjs/common';
 import { CreatePropertyDto } from './dto/createProperty.dto';
 import { ParseIdPipe } from './pipes/parseIdppipe';
 import { ZodValidationPipe } from './pipes/zodValidationPipe';
@@ -7,6 +7,7 @@ import { createPropertySchema } from './dto/createPropertyZod.dto';
 
 import { PropertyService } from './property.service';
 import { UpdatePropertyDto } from './dto/updateProperty.dto';
+import { PaginationDTO } from './dto/pagination.dto';
 
 
 
@@ -22,8 +23,8 @@ export class PropertyController {
 
 
     @Get()
-    findAll(){
-       return this.propertyService.findAll();
+    findAll(@Query() paginationDTO : PaginationDTO){
+       return this.propertyService.findAll(paginationDTO);
     }
     @Get(":id")
     findOne(@Param("id",ParseIntPipe) id ) {
