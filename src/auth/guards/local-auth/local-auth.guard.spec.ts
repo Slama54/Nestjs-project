@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { LocalAuthGuard } from './local-auth.guard';
 
 describe('LocalAuthGuard', () => {
