@@ -19,6 +19,8 @@ export class User {
     createdAt: Date;
     @Column()
     password: string;
+    @Column({ nullable: true})
+    hashedRefreshToken:string;
 
     @OneToMany(()=>Property,(property)=>property.user)
     properties:Property[];
