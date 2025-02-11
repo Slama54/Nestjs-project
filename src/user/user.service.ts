@@ -30,7 +30,7 @@ export class UserService {
   async findOne(id: number) {
     return this.UserRepo.findOne({
       where :{id},
-      select:['firstName', 'lastName','avatarURl',"hashedRefreshToken"]
+      select:["id",'firstName', 'lastName','avatarURl',"hashedRefreshToken","role"]
     });
   }
 
